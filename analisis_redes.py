@@ -1,0 +1,56 @@
+import csv
+
+def limpiar_valor(valor):
+    valor = valor.replace(",", "").replace('"', '').replace("%", "").strip()
+    try:
+        return int(valor)
+    except ValueError:
+        return 0
+
+csv_file = "datos_redes_sociales - datos_redes_sociales (1).csv"
+
+datos = {
+    "FACEBOOK": {},
+    "TWITTER": {},
+    "YOUTUBE": {}
+}
+
+with open(csv_file, encoding="utf-8") as f:
+    reader = csv.reader(f)
+    next(reader)
+    for row in reader:
+        red = row[0].strip()
+        concepto = row[1].strip()
+        valores = [limpiar_valor(v) for v in row[3:9]]
+        datos[red][concepto] = valores
+
+meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"]
+
+tw_followers = datos["TWITTER"].get("SEGUIDORES (FOLLOWERS)", [0]*6)
+dif_twitter = tw_followers[5] - tw_followers[0]
+print(f"Diferencia de seguidores en Twitter entre Enero y Junio: {dif_twitter}")
+
+yt_views = datos["YOUTUBE"].get("VISUALIZACIONES", [0]*6)
+print("Meses disponibles:", ", ".join(meses))
+mes1 = input("Selecciona el primer mes : ").capitalize()
+mes2 = input("Selecciona el segundo mes : ").capitalize()
+
+if mes1 in meses and mes2 in meses:
+    idx1 = meses.index(mes1)
+    idx2 = meses.index(mes2)
+    dif_views = yt_views[idx2] - yt_views[idx1]
+    print(f"Diferencia de visualizaciones de YouTube entre {mes1} y {mes2}: {dif_views}")
+else:
+    print("Meses inválidos. Escribe el nombre correctamente (Ejemplo: Enero, Junio).")
+
+tw_crecimiento = datos["TWITTER"].get("CRECIMIENTO DE FOLLOWERS", [0]*6)
+fb_crecimiento = datos["FACEBOOK"].get("CRECIMIENTO (seguidores)", [0]*6)
+promedio_crecimiento = (sum(tw_crecimiento) + sum(fb_crecimiento)) / 12
+print(f"Promedio de crecimiento de Twitter y Facebook entre Enero y Junio: {promedio_crecimiento:.2f}")
+
+yt_likes = datos["YOUTUBE"].get("ME GUSTA", [0]*6)
+tw_likes = datos["TWITTER"].get("ME GUSTA", [0]*6)
+fb_likes = datos["FACEBOOK"].get("ME GUSTA EN PUBLICACIONES", [0]*6)
+total_likes = yt_likes + tw_likes + fb_likes
+promedio_likes = sum(total_likes) / len(total_likes)
+print(f"Promedio de 'Me gusta' de YouTube, Twitter y Facebook: {promedio_likes:.2f}")

@@ -1,1 +1,15 @@
+TAREA 4 .- ADT Set
+DATOS:
+NOMBRE: PLATA LOPEZ SANTIAGO
+PROFESOR: JESUS HERNANDEZ CABRERA
+GRUPO: 1359
+MATERIA: ESTRUCTURA DE DATOS
 
+OBJETIVOS:
+Este proyecto implementa una estructura de datos tipo conjunto (SetADT) en Java, utilizando generics para permitir el manejo de cualquier tipo de dato.
+Incluir una clase de prueba (Prueba) que ejecuta y valida todos los métodos implementados.
+
+La tarea consiste en:
+
+Completar el código de la clase SetADT.
+Implementar todos los métodos faltantes.

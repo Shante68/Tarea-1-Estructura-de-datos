@@ -5,11 +5,12 @@ PROFESOR: JESUS HERNANDEZ CABRERA
 GRUPO: 1359
 MATERIA: ESTRUCTURA DE DATOS
 
-OBJETIVOS:
-Este proyecto implementa una estructura de datos tipo conjunto (SetADT) en Java, utilizando generics para permitir el manejo de cualquier tipo de dato.
-Incluir una clase de prueba (Prueba) que ejecuta y valida todos los métodos implementados.
+Implementación de un Conjunto (Set ADT) en Java 
+Este proyecto presenta una implementación personalizada de un Tipo de Dato Abstracto (TDA) de Conjunto en Java. Utilizando un ArrayList como estructura de datos subyacente, la clase ADT<T> simula el comportamiento de un conjunto matemático, garantizando que no se almacenen elementos duplicados y proporcionando las operaciones fundamentales de la teoría de conjuntos.
 
-La tarea consiste en:
+📂 Estructura del Proyecto
+El código está organizado en dos archivos principales:
 
-Completar el código de la clase SetADT.
-Implementar todos los métodos faltantes.
+ADT.java: Contiene la lógica central del TDA. Es una clase genérica (<T>) que define los atributos y métodos para manipular un conjunto.
+
+Prueba.java: Funciona como un driver o clase de demostración. Contiene el método main que instancia y utiliza la clase ADT para mostrar su funcionamiento en la práctica.

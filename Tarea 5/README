@@ -1,1 +1,18 @@
+Tarea 5. FINALIZAR LISTA LIGADA
+Alumno: PLATA LOPEZ SANTIAGO
+Maestro: HERNANDEZ CABRERA JESUS
+Grupo: 1359
+Materia: ESTRUCTURA DE DATOS
 
+Funcionalidades Implementadas
+agregar_al_final(valor) → Inserta un nodo al final de la lista.
+
+agregar_al_inicio(valor) → Inserta un nodo al inicio de la lista.
+
+agregar_después_de(referencia, valor) → Inserta un nodo después de un nodo específico.
+
+eliminar(posición) → Elimina el nodo en la posición indicada.
+
+eliminar_el_primero() → Elimina el primer nodo de la lista.
+
+eliminar_el_final() → Elimina el último nodo de la lista.

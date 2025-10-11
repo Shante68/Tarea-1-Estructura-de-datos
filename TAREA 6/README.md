@@ -3,7 +3,7 @@
 # 🏥 Sistema de Gestión de Cola de Pacientes
 
 Este proyecto simula el funcionamiento de una **cola de pacientes** en una clínica médica.
-Cada paciente llega por turno y debe ser atendido **en orden de llegada (FIFO)**.
+Cada paciente llega por turno y debe ser atendido **en orden de llegada **.
 
 
 
